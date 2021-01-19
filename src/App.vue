@@ -1,26 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app">
+    <Header />
+    <div class="app__main">
+      <MdFile @text="reciveText" />
+      <MdOutput :text="text" />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { Header, MdFile, MdOutput } from "./components";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Header,
+    MdOutput,
+    MdFile,
+  },
+  data() {
+    return {
+      text: "",
+    };
+  },
+  methods: {
+    reciveText(prop) {
+      this.text = prop;
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.app__main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 10px auto;
+  flex: 1;
+  background: white;
 }
 </style>
