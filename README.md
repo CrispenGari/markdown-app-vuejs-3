@@ -3,7 +3,7 @@
 This is a simple markdown application that converts the, normal text to `markdown` text in `Vue.js`
 
 ## DEMO
-![demo]()
+![demo](https://github.com/CrispenGari/markdown-app-vuejs-3/blob/main/bandicam%202021-01-19%2020-30-59-532.jpg)
 ## This app is capable of:
 
 - converting the text into markdown text from a `textarea` to an article
